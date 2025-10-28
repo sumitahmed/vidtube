@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>VidTube - Authentication</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <!-- Logo -->
+      <div class="auth-logo">
+        <h1>VidTube</h1>
+        <p>Welcome! Please login or register.</p>
+      </div>
+      
+      <!-- Login Form -->
+      <div id="login-section" class="auth-form">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="login-email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+          </div>
+          
+          <button type="submit" class="btn-primary submit-btn">Login</button>
+        </form>
+        
+        <div class="toggle-link">
+          Don't have an account? <a onclick="showRegister(event)">Register</a>
+        </div>
+      </div>
+      
+      <!-- Register Form -->
+      <div id="register-section" class="auth-form" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="register-fullname" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" id="register-username" placeholder="Choose a username" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="register-email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="register-password" placeholder="Create a password" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Avatar</label>
+            <div class="file-input-wrapper">
+              <input type="file" id="register-avatar" accept="image/*" required>
+              <label for="register-avatar" class="file-input-label">
+                <span id="avatar-label-text">Choose Avatar Image</span>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Cover Image (Optional)</label>
+            <div class="file-input-wrapper">
+              <input type="file" id="register-coverImage" accept="image/*">
+              <label for="register-coverImage" class="file-input-label">
+                <span id="cover-label-text">Choose Cover Image</span>
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-primary submit-btn">Register</button>
+        </form>
+        
+        <div class="toggle-link">
+          Already have an account? <a onclick="showLogin(event)">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript Files -->
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

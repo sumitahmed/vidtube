@@ -1,0 +1,365 @@
+/* ============================================
+   UPLOAD CONTAINER
+   ============================================ */
+
+.upload-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.upload-container h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 32px;
+}
+
+/* ============================================
+   UPLOAD SECTIONS
+   ============================================ */
+
+.upload-section {
+  background: #202020;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.upload-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FILE DROP ZONE
+   ============================================ */
+
+.file-drop-zone {
+  border: 2px dashed #444;
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.file-drop-zone:hover {
+  border-color: #ea2a33;
+  background: rgba(234, 42, 51, 0.05);
+}
+
+.file-drop-zone.dragover {
+  border-color: #ea2a33;
+  background: rgba(234, 42, 51, 0.1);
+}
+
+.drop-zone-content .material-icons {
+  font-size: 64px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.drop-zone-content p {
+  color: #ddd;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.file-label {
+  color: #ea2a33;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.file-label:hover {
+  color: #ff3d46;
+}
+
+.file-info {
+  color: #888;
+  font-size: 14px;
+}
+
+.file-name {
+  color: #ddd;
+  font-size: 14px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* File Preview */
+.file-preview {
+  position: relative;
+  max-width: 100%;
+}
+
+.file-preview video {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+}
+
+.remove-file-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-file-btn:hover {
+  background: rgba(234, 42, 51, 0.9);
+}
+
+/* ============================================
+   FORM GROUPS
+   ============================================ */
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.char-count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+/* ============================================
+   THUMBNAIL UPLOAD
+   ============================================ */
+
+.thumbnail-upload {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.thumbnail-label {
+  cursor: pointer;
+  display: block;
+  width: 240px;
+  height: 135px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnail-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #282828;
+  border: 2px dashed #444;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.thumbnail-placeholder:hover {
+  border-color: #ea2a33;
+  background: rgba(234, 42, 51, 0.05);
+}
+
+.thumbnail-placeholder .material-icons {
+  font-size: 48px;
+  color: #666;
+}
+
+.thumbnail-placeholder span:last-child {
+  color: #ddd;
+  font-size: 14px;
+}
+
+#thumbnail-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-info {
+  flex: 1;
+}
+
+.thumbnail-info p {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* ============================================
+   VISIBILITY OPTIONS
+   ============================================ */
+
+.visibility-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: #282828;
+  border: 2px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option:hover {
+  border-color: #ea2a33;
+  background: rgba(234, 42, 51, 0.05);
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"]:checked + .radio-content {
+  color: white;
+}
+
+.radio-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  color: #aaa;
+}
+
+.radio-content .material-icons {
+  font-size: 28px;
+}
+
+.radio-content strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.radio-content p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* ============================================
+   UPLOAD PROGRESS
+   ============================================ */
+
+.upload-progress {
+  background: #202020;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ea2a33;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.upload-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.upload-actions button {
+  min-width: 120px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .upload-container {
+    padding: 16px;
+  }
+  
+  .upload-section {
+    padding: 20px 16px;
+  }
+  
+  .thumbnail-upload {
+    flex-direction: column;
+  }
+  
+  .thumbnail-label {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .upload-actions {
+    flex-direction: column;
+  }
+  
+  .upload-actions button {
+    width: 100%;
+  }
+}

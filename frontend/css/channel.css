@@ -1,0 +1,456 @@
+/* ============================================
+   CHANNEL HEADER
+   ============================================ */
+
+.channel-header {
+  margin-bottom: 24px;
+}
+
+.channel-cover {
+  width: 100%;
+  height: 200px;
+  background: #282828;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.channel-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.channel-info-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.channel-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #3a3a3a;
+  flex-shrink: 0;
+}
+
+.channel-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.channel-details {
+  flex: 1;
+  min-width: 200px;
+}
+
+.channel-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.channel-meta {
+  color: #aaa;
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.channel-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.channel-actions .btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================
+   CHANNEL TABS
+   ============================================ */
+
+.channel-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #303030;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: white;
+}
+
+.tab-btn.active {
+  color: white;
+  border-bottom-color: #ea2a33;
+}
+
+/* ============================================
+   TAB CONTENT
+   ============================================ */
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about-section {
+  max-width: 800px;
+  background: #202020;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.about-section h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.about-section h3:first-child {
+  margin-top: 0;
+}
+
+.about-section p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #303030;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  color: #aaa;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .channel-info-container {
+    flex-direction: column;
+  }
+  
+  .channel-actions {
+    width: 100%;
+  }
+  
+  .channel-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .channel-tabs {
+    overflow-x: auto;
+  }
+  
+  .tab-btn {
+    white-space: nowrap;
+  }
+}
+
+/* ============================================
+   SUBSCRIBE & MANAGE CHANNEL BUTTONS
+   ============================================ */
+
+.manage-channel-btn,
+.subscribe-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Manage Channel Button */
+.manage-channel-btn {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #3a3a3a;
+}
+
+.manage-channel-btn:hover {
+    background: #3a3a3a;
+    border-color: #4a4a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.manage-channel-btn .material-icons {
+    font-size: 18px;
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+    background: linear-gradient(135deg, #ea2a33 0%, #d62027 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(234, 42, 51, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.subscribe-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.subscribe-btn:hover::before {
+    left: 100%;
+}
+
+.subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 42, 51, 0.5);
+}
+
+.subscribe-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(234, 42, 51, 0.3);
+}
+
+/* Subscribed State */
+.subscribe-btn.subscribed {
+    background: linear-gradient(135deg, #666 0%, #555 100%);
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+.subscribe-btn.subscribed:hover {
+    background: linear-gradient(135deg, #555 0%, #444 100%);
+    box-shadow: 0 6px 20px rgba(102, 102, 102, 0.4);
+}
+
+/* Disabled State */
+.subscribe-btn:disabled,
+.manage-channel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.subscribe-btn:disabled:hover,
+.manage-channel-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .manage-channel-btn,
+    .subscribe-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+}
+/* Subscribe Group */
+.subscribe-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+
+.manage-channel-btn,
+.subscribe-btn {
+    padding: 10px 24px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Manage Channel Button */
+.manage-channel-btn {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #3a3a3a;
+    border-radius: 24px;
+}
+
+.manage-channel-btn:hover {
+    background: #3a3a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+    background: linear-gradient(135deg, #ea2a33 0%, #d62027 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(234, 42, 51, 0.3);
+    border-radius: 24px 0 0 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 42, 51, 0.5);
+}
+
+/* Notification Bell */
+.notification-btn {
+    background: linear-gradient(135deg, #ea2a33 0%, #d62027 100%);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: not-allowed;
+    border-radius: 0 24px 24px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(234, 42, 51, 0.3);
+    opacity: 0.8;
+}
+
+.notification-btn .material-icons {
+    font-size: 20px;
+}
+
+/* Subscribed State */
+.subscribe-btn.subscribed {
+    background: linear-gradient(135deg, #666 0%, #555 100%);
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+.notification-btn.subscribed {
+    background: linear-gradient(135deg, #666 0%, #555 100%);
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .subscribe-group,
+    .manage-channel-btn {
+        width: 100%;
+    }
+    
+    .subscribe-btn {
+        flex: 1;
+    }
+}
+/* ============================================
+   SUBSCRIBE GROUP & BELL ICON
+   ============================================ */
+
+.subscribe-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+
+.subscribe-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #cc0000;
+    color: white;
+}
+
+.subscribe-btn:hover {
+    background: #ff0000;
+}
+
+.subscribe-btn.subscribed {
+    background: #606060;
+    color: white;
+}
+
+.subscribe-btn.subscribed:hover {
+    background: #707070;
+}
+
+
+.notification-btn {
+    background: linear-gradient(135deg, #ea2a33 0%, #d62027 100%);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    cursor: not-allowed;
+    border-radius: 0 24px 24px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(234, 42, 51, 0.3);
+    opacity: 0.8;
+}
+
+.notification-btn .material-icons {
+    font-size: 20px;
+}
+
+.notification-btn.subscribed {
+    background: linear-gradient(135deg, #666 0%, #555 100%);
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}

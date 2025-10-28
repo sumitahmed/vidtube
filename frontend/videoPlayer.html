@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Video - VidTube</title>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/videoPlayer.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <button class="icon-btn" id="menu-toggle">
+        <span class="material-icons">menu</span>
+      </button>
+      <a href="home.html" class="logo">
+        <span class="material-icons" style="color: #ea2a33;">play_circle</span>
+        <span class="logo-text">VidTube</span>
+      </a>
+    </div>
+    
+    <div class="navbar-center">
+      <div class="search-box">
+        <input type="text" placeholder="Search" id="search-input">
+        <button class="search-btn">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="navbar-right">
+      <a href="upload.html" class="icon-btn">
+        <span class="material-icons">video_call</span>
+      </a>
+      <div class="profile-dropdown">
+        <button class="profile-btn" id="profile-btn">
+          <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img" id="profile-img">
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <a href="channel.html">My Channel</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="#" onclick="logout()">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="player-container">
+    <!-- Video Player Section -->
+    <div class="player-primary">
+      <!-- Video Player -->
+      <div class="video-player">
+        <video id="video-element" controls>
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Video Info -->
+      <div class="video-info-section">
+        <h1 class="video-title" id="video-title">Loading...</h1>
+        
+        <div class="video-stats">
+          <span id="video-views">0 views</span>
+          <span>•</span>
+          <span id="video-date">Loading...</span>
+        </div>
+
+        <div class="video-actions">
+          <button class="action-btn" id="like-btn">
+            <span class="material-icons">thumb_up</span>
+            <span id="like-count">0</span>
+          </button>
+          <button class="action-btn" id="dislike-btn">
+            <span class="material-icons">thumb_down</span>
+          </button>
+          <button class="action-btn">
+            <span class="material-icons">share</span>
+            <span>Share</span>
+          </button>
+          <button class="action-btn">
+            <span class="material-icons">playlist_add</span>
+            <span>Save</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Channel Info -->
+      <div class="channel-section">
+        <div class="channel-info">
+          <a href="#" class="channel-avatar" id="channel-link">
+            <img src="https://via.placeholder.com/48" alt="Channel" id="channel-avatar">
+          </a>
+          <div class="channel-details">
+            <a href="#" class="channel-name" id="channel-name">Channel Name</a>
+            <div class="subscriber-count" id="subscriber-count">0 subscribers</div>
+          </div>
+        </div>
+        <button class="btn-primary subscribe-btn" id="subscribe-btn">Subscribe</button>
+      </div>
+
+      <!-- Video Description -->
+      <div class="description-section">
+        <div class="description-content" id="description-content">
+          <p>Loading description...</p>
+        </div>
+        <button class="show-more-btn" id="show-more-btn">Show more</button>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments-section">
+        <div class="comments-header">
+          <h3><span id="comment-count">0</span> Comments</h3>
+          <button class="sort-btn">
+            <span class="material-icons">sort</span>
+            <span>Sort by</span>
+          </button>
+        </div>
+
+        <div class="add-comment">
+          <img src="https://via.placeholder.com/40" alt="You" class="comment-avatar" id="user-avatar">
+          <div class="comment-input-container">
+            <input type="text" placeholder="Add a comment..." id="comment-input">
+            <button class="send-comment-btn" id="send-comment-btn">
+              <span class="material-icons">send</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="comments-list" id="comments-list">
+          <!-- Comments will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Videos Sidebar -->
+    <aside class="player-sidebar">
+      <div class="sidebar-header">
+        <h3>Up Next</h3>
+      </div>
+      <div id="recommended-videos" class="recommended-list">
+        <div class="loading">Loading recommendations...</div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/videoPlayer.js"></script>
+</body>
+</html>

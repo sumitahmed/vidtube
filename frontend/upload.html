@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Video - VidTube</title>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <button class="icon-btn" id="menu-toggle">
+        <span class="material-icons">menu</span>
+      </button>
+      <a href="home.html" class="logo">
+        <span class="material-icons" style="color: #ea2a33;">play_circle</span>
+        <span class="logo-text">VidTube</span>
+      </a>
+    </div>
+    
+    <div class="navbar-center">
+      <div class="search-box">
+        <input type="text" placeholder="Search" id="search-input">
+        <button class="search-btn">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="navbar-right">
+      <a href="upload.html" class="icon-btn">
+        <span class="material-icons">video_call</span>
+      </a>
+      <div class="profile-dropdown">
+        <button class="profile-btn" id="profile-btn">
+          <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img" id="profile-img">
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <a href="channel.html">My Channel</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="#" onclick="logout()">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <a href="home.html" class="sidebar-item">
+          <span class="material-icons">home</span>
+          <span>Home</span>
+        </a>
+        <a href="history.html" class="sidebar-item">
+          <span class="material-icons">history</span>
+          <span>History</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <div class="sidebar-section">
+        <a href="subscriptions.html" class="sidebar-item">
+          <span class="material-icons">subscriptions</span>
+          <span>Subscriptions</span>
+        </a>
+        <a href="playlists.html" class="sidebar-item">
+          <span class="material-icons">video_library</span>
+          <span>Playlists</span>
+        </a>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <div class="sidebar-section">
+        <a href="channel.html" class="sidebar-item">
+          <span class="material-icons">person</span>
+          <span>My Channel</span>
+        </a>
+        <a href="dashboard.html" class="sidebar-item">
+          <span class="material-icons">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="upload-container">
+        <h1>Upload Video</h1>
+        
+        <form id="upload-form" enctype="multipart/form-data">
+          <!-- Video Upload Section -->
+          <div class="upload-section">
+            <h2>Video File</h2>
+            <div class="file-drop-zone" id="video-drop-zone">
+              <input type="file" id="video-file" accept="video/*">
+              <div class="drop-zone-content">
+                <span class="material-icons">cloud_upload</span>
+                <p>Drag and drop video file or <label for="video-file" class="file-label">browse</label></p>
+                <span class="file-info">MP4, MOV, AVI (Max 500MB)</span>
+              </div>
+              <div class="file-preview" id="video-preview" style="display: none;">
+                <video id="video-preview-player" controls></video>
+                <button type="button" class="remove-file-btn" onclick="removeVideo()">
+                  <span class="material-icons">close</span>
+                </button>
+              </div>
+            </div>
+            <div class="file-name" id="video-file-name"></div>
+          </div>
+
+          <!-- Video Details -->
+          <div class="upload-section">
+            <h2>Details</h2>
+            
+            <div class="form-group">
+              <label for="title">Title *</label>
+              <input type="text" id="title" placeholder="Enter video title" required maxlength="100">
+              <span class="char-count"><span id="title-count">0</span>/100</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" placeholder="Tell viewers about your video" rows="5" maxlength="5000"></textarea>
+              <span class="char-count"><span id="desc-count">0</span>/5000</span>
+            </div>
+          </div>
+
+          <!-- Thumbnail Upload -->
+          <div class="upload-section">
+            <h2>Thumbnail</h2>
+            <p class="section-desc">Select or upload a picture that shows what's in your video. A good thumbnail stands out and draws viewers' attention.</p>
+            
+            <div class="thumbnail-upload">
+              <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+
+              <label for="thumbnail-file" class="thumbnail-label">
+                <div class="thumbnail-placeholder" id="thumbnail-placeholder">
+                  <span class="material-icons">image</span>
+                  <span>Upload thumbnail</span>
+                </div>
+                <img id="thumbnail-preview" style="display: none;">
+              </label>
+              <div class="thumbnail-info">
+                <p>Recommended: 1280x720 pixels</p>
+                <p>Max size: 2MB</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visibility -->
+          <div class="upload-section">
+            <h2>Visibility</h2>
+            <div class="visibility-options">
+              <label class="radio-option">
+                <input type="radio" name="visibility" value="public" checked>
+                <div class="radio-content">
+                  <span class="material-icons">public</span>
+                  <div>
+                    <strong>Public</strong>
+                    <p>Everyone can watch your video</p>
+                  </div>
+                </div>
+              </label>
+              
+              <label class="radio-option">
+                <input type="radio" name="visibility" value="private">
+                <div class="radio-content">
+                  <span class="material-icons">lock</span>
+                  <div>
+                    <strong>Private</strong>
+                    <p>Only you can watch your video</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Upload Progress -->
+          <div class="upload-progress" id="upload-progress" style="display: none;">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+              <span id="progress-status">Uploading...</span>
+              <span id="progress-percent">0%</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="upload-actions">
+            <button type="button" class="btn-secondary" onclick="window.location.href='channel.html'">Cancel</button>
+            <button type="submit" class="btn-primary" id="upload-btn">Upload Video</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

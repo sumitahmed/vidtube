@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist Details - VidTube</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <button class="icon-btn" id="menu-toggle">
+        <span class="material-icons">menu</span>
+      </button>
+      <a href="home.html" class="logo">
+        <span class="material-icons" style="color: #ea2a33;">play_circle</span>
+        <span class="logo-text">VidTube</span>
+      </a>
+    </div>
+
+    <div class="navbar-center">
+      <div class="search-box">
+        <input type="text" placeholder="Search" id="search-input">
+        <button class="search-btn">
+          <span class="material-icons">search</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar-right">
+      <a href="upload.html" class="icon-btn">
+        <span class="material-icons">video_call</span>
+      </a>
+      <div class="profile-dropdown">
+        <button class="profile-btn" id="profile-btn">
+          <img src="" alt="Profile" class="profile-img" id="profile-img">
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+          <a href="channel.html">My Channel</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="#" id="logout-btn">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <a href="home.html" class="sidebar-item">
+          <span class="material-icons">home</span>
+          <span>Home</span>
+        </a>
+        <a href="history.html" class="sidebar-item">
+          <span class="material-icons">history</span>
+          <span>History</span>
+        </a>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-section">
+        <a href="subscriptions.html" class="sidebar-item">
+          <span class="material-icons">subscriptions</span>
+          <span>Subscriptions</span>
+        </a>
+        <a href="playlists.html" class="sidebar-item active">
+          <span class="material-icons">video_library</span>
+          <span>Playlists</span>
+        </a>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-section">
+        <a href="channel.html" class="sidebar-item">
+          <span class="material-icons">person</span>
+          <span>My Channel</span>
+        </a>
+        <a href="dashboard.html" class="sidebar-item">
+          <span class="material-icons">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div id="playlist-details-container" class="loading">
+        <p>Loading playlist...</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/playlist-details.js"></script>
+
+</body>
+
+</html>

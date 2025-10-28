@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel - VidTube</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/channel.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="icon-btn" id="menu-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+            <a href="home.html" class="logo">
+                <span class="material-icons" style="color: #ea2a33;">play_circle</span>
+                <span class="logo-text">VidTube</span>
+            </a>
+        </div>
+
+        <div class="navbar-center">
+            <div class="search-box">
+                <input type="text" placeholder="Search" id="search-input">
+                <button class="search-btn">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <a href="upload.html" class="icon-btn">
+                <span class="material-icons">video_call</span>
+            </a>
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profile-btn">
+                    <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img" id="profile-img">
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="channel.html">My Channel</a>
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="#" onclick="logout()">Sign Out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-section">
+                <a href="home.html" class="sidebar-item">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </a>
+                <a href="history.html" class="sidebar-item">
+                    <span class="material-icons">history</span>
+                    <span>History</span>
+                </a>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-section">
+                <a href="subscriptions.html" class="sidebar-item">
+                    <span class="material-icons">subscriptions</span>
+                    <span>Subscriptions</span>
+                </a>
+                <a href="playlists.html" class="sidebar-item">
+                    <span class="material-icons">video_library</span>
+                    <span>Playlists</span>
+                </a>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-section">
+                <a href="channel.html" class="sidebar-item active">
+                    <span class="material-icons">person</span>
+                    <span>My Channel</span>
+                </a>
+                <a href="dashboard.html" class="sidebar-item">
+                    <span class="material-icons">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Channel Header -->
+            <div class="channel-header">
+                <div class="channel-cover" id="channel-cover" style="height: 200px; width: 100%;"></div>
+
+
+                <div class="channel-info-container">
+                    <div class="channel-avatar-large">
+                        <img src="https://via.placeholder.com/80" alt="Avatar" id="channel-avatar">
+                    </div>
+
+                    <div class="channel-details">
+                        <h1 class="channel-name" id="channel-name">Loading...</h1>
+                        <div class="channel-meta">
+                            <span id="channel-username"></span>
+                            <span></span>
+                            <span id="subscribers-count"></span>
+                            <span>•</span>
+                            <span id="videos-count"></span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="channel-actions">
+                        <!-- Manage Channel Button -->
+                        <button class="manage-channel-btn" onclick="window.location.href='dashboard.html'"
+                            style="display: none;">
+                            <span class="material-icons">edit</span>
+                            Manage Channel
+                        </button>
+
+                        <!-- Subscribe Button Group -->
+                        <div class="subscribe-group" style="display: none;">
+                            <button id="subscribe-btn" class="subscribe-btn">
+                                Subscribe
+                            </button>
+                            <!-- <button class="notification-btn" disabled>
+                                <span class="material-icons">notifications</span>
+                            </button> -->
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- Channel Tabs -->
+            <div class="channel-tabs">
+                <button class="tab-btn active" data-tab="videos">Videos</button>
+                <button class="tab-btn" data-tab="about">About</button>
+            </div>
+
+            <div class="channel-section" id="videos-section">
+                <div id="videos-container" class="videos-grid">
+                    <!-- Videos will be loaded here by JavaScript -->
+                </div>
+
+            </div>
+
+
+            <!-- Videos Tab -->
+            <div class="tab-content active" id="videos-tab">
+                <div id="channel-videos" class="videos-grid">
+                    <!-- Videos will load here -->
+                </div>
+            </div>
+
+
+            <!-- About Tab -->
+            <div class="tab-content" id="about-tab">
+                <div class="about-section">
+                    <h3>Description</h3>
+                    <p id="channel-description">No description available.</p>
+
+                    <h3>Channel Details</h3>
+                    <div class="detail-row">
+                        <span>Email:</span>
+                        <span id="channel-email">-</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Joined:</span>
+                        <span id="channel-joined">-</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/channel.js"></script>
+
+</body>
+
+</html>

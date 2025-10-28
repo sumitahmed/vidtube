@@ -1,0 +1,86 @@
+# ========================================
+# ENVIRONMENT VARIABLES (NEVER PUSH!)
+# ========================================
+.env
+.env.local
+.env.production
+.env.test
+
+# ========================================
+#  DEPENDENCIES
+# ========================================
+node_modules/
+package-lock.json
+
+# ========================================
+#  UPLOADED FILES & TEMP FILES
+# ========================================
+public/temp/*
+!public/temp/.gitkeep
+public/uploads/*
+!public/uploads/.gitkeep
+
+# User uploaded content
+public/*.jpg
+public/*.png
+public/*.mp4
+public/*.jpeg
+public/*.gif
+public/*.webp
+
+# ========================================
+# LOGS
+# ========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+app.log
+error.log
+
+# ========================================
+#  SYSTEM FILES
+# ========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================================
+#  SECURITY SENSITIVE FILES
+# ========================================
+*.pem
+*.key
+*.cert
+
+# ========================================
+#  DATABASE FILES (if using local)
+# ========================================
+*.sqlite
+*.db
+
+# ========================================
+#  IDE/EDITOR FILES
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================================
+#  TESTING
+# ========================================
+coverage/
+.nyc_output/
+
+# ========================================
+# BUILD FILES
+# ========================================
+dist/
+build/
+
+//my stuff
+backedn-structure.txt
+readme2.md
+eraser.txt
+eraser.png
