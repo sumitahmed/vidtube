@@ -2,7 +2,8 @@
 
 VidTube is a complete video streaming platform built from the ground up, featuring a robust Node.js backend and a dynamic, responsive frontend created with vanilla JavaScript. This project demonstrates a full development lifecycle, from database design to deployment.
 
- <!-- Replace with a good screenshot URL -->
+https://github.com/sumitahmed/vidtube/blob/main/vidtube-showcase.png.png
+https://github.com/sumitahmed/vidtube/blob/main/Screenshot%202025-10-28%20225841.png
 
 ## Core Features
 
